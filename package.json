@@ -1,6 +1,6 @@
 {
     "name": "@adoublef/foobar",
-    "version": "0.0.1",
+    "version": "0.0.0",
     "description": "Foobar",
     "main": "index.js",
     "scripts": {
