@@ -4,7 +4,9 @@
     "description": "FOobar",
     "main": "index.js",
     "scripts": {
-        "test": "jest"
+        "test": "jest",
+        "build": "tsc",
+        "rm": "rm -rf dist"
     },
     "author": "Rahim Afful-Brown",
     "license": "MIT",
