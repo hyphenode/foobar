@@ -20,7 +20,7 @@ jobs:
       - name: send greeting
         run: |
           echo "Hello ${{ github.event.inputs.name }}"
-          touch manual.txt
+          touch foobar.txt
       - name: push changes
         run: |
           git add manual.txt
