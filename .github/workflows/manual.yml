@@ -18,4 +18,5 @@ jobs:
           echo "Hello ${{ github.event.inputs.name }}"
           touch manual.txt
           git add .
+          git commit -m "added file"
           git push
