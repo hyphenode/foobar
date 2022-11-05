@@ -16,6 +16,8 @@ jobs:
       - name: Send greeting
         run: |
           echo "Hello ${{ github.event.inputs.name }}"
+          git config --global user.email "${GITHUB_ACTOR}"
+          git config --global user.name "${GITHUB_ACTOR}@users.noreply.github.com"
           touch manual.txt
           git add .
           git commit -m "added file"
