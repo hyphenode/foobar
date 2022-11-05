@@ -23,6 +23,6 @@ jobs:
           touch foobar.txt
       - name: push changes
         run: |
-          git add manual.txt
+          git add .
           git commit -m "added manual file"
           git push origin
