@@ -1,0 +1,32 @@
+name: Test
+
+on:
+  workflow_dispatch:
+    # inputs:
+    #   name:
+    #     description: "Person to greet"
+    #     default: "world"
+    #     required: true
+  pull_request:
+    branches: [main]
+
+jobs:
+  test:
+    name: Matrix Testing
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+        node-version: [14.x, 16.x, 18.x]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Testing on ${{ matrix.os }} using Node.js v${{ matrix.node-version }}
+        run: |
+          npm i
+          npm test
